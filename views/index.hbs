@@ -1,1 +1,19 @@
-<h2>Trending Coins</h2>
+<h2>Home Page</h2>
+<table>
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Symbol</td>
+            <td>Price</td>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each coinsArray}}
+        <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.symbol}}</td>
+            <td>{{this.price_btc}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

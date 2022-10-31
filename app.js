@@ -11,20 +11,36 @@ hbs.registerPartials(__dirname + "/views/partials");
 
 app.use(express.static('public'))
 
+let btcPrice;
 
 app.get('/trending', (req, res) => { // Trending route
-    
+    axios.get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd')
+    .then(btcData =>{
+        btcPrice = btcData.data.bitcoin.usd
+    })
     axios.get('https://api.coingecko.com/api/v3/search/trending')
     .then(apiData =>{
+        
         let trendingCoins = apiData.data.coins
-        res.render('trending', {trendingCoins: trendingCoins})
+        for (i=0;i<trendingCoins.length;i++){
+            trendingCoins[i].item.price_btc *=  btcPrice
+            trendingCoins[i].item.price_btc = trendingCoins[i].item.price_btc.toFixed(3)
+        }
+        
+        res.render('trending', {trendingCoins: trendingCoins, btcPrice: btcPrice})
     })
 })
 
 app.get('/', (req, res) => { // Homepage route
-        res.render('index')
+    axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=25&page=1&sparkline=false')
+    .then(coinsData =>{
+        let coinsArray = coinsData.data
+        console.log(coinsArray)
+        res.render('index', {coinsArray})
     })
+        
+})
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
-  })
+})

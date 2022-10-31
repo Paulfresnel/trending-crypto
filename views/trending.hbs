@@ -3,13 +3,13 @@
 <ul>
     {{#each trendingCoins}}
     <div class="coin-card">
-    <div class="flex-header">
-        <img class="image-logo" src="{{this.item.thumb}}">
-        <h1>{{this.item.id}}</h1>
-    </div>
-    <p><span>{{this.item.symbol}}</span></p>
-    <p>Market Cap Rank: {{this.item.market_cap_rank}}</p>
-    <p>{{this.item.price_btc}}</p>
+        <div class="flex-header">
+            <img class="image-logo" src="{{this.item.thumb}}">
+            <h1>{{this.item.id}}</h1>
+        </div>
+        <p>Symbol: <span>{{this.item.symbol}}</span></p>
+        <p>Market Cap Rank: {{this.item.market_cap_rank}}</p>
+        <p>$ {{this.item.price_btc}}</p>
     </div>
     {{/each}}
 </ul>
