@@ -27,7 +27,7 @@ app.get('/trending', (req, res) => { // Trending route
             trendingCoins[i].item.price_btc = trendingCoins[i].item.price_btc.toFixed(3)
         }
         
-        res.render('trending', {trendingCoins: trendingCoins, btcPrice: btcPrice})
+        res.render('trending', {trendingCoins})
     })
 })
 
@@ -38,8 +38,10 @@ app.get('/', (req, res) => { // Homepage route
         for (i=0;i<coinsArray.length;i++){
             coinsArray[i].market_cap = coinsArray[i].market_cap.toLocaleString('en-US');
             coinsArray[i].current_price = coinsArray[i].current_price.toLocaleString('en-US', {maximumFractionDigits:2});
+            
             coinsArray[i].symbol = coinsArray[i].symbol.toUpperCase();
             coinsArray[i].price_change_percentage_24h =  coinsArray[i].price_change_percentage_24h.toLocaleString('en-US', {maximumFractionDigits:2});
+            coinsArray[i].ath = coinsArray[i].ath.toLocaleString('en-US', {maximumFractionDigits:2})
         }
         console.log(coinsArray)
         res.render('index', {coinsArray})
