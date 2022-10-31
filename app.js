@@ -35,6 +35,12 @@ app.get('/', (req, res) => { // Homepage route
     axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=25&page=1&sparkline=false')
     .then(coinsData =>{
         let coinsArray = coinsData.data
+        for (i=0;i<coinsArray.length;i++){
+            coinsArray[i].market_cap = coinsArray[i].market_cap.toLocaleString('en-US');
+            coinsArray[i].current_price = coinsArray[i].current_price.toLocaleString('en-US', {maximumFractionDigits:2});
+            coinsArray[i].symbol = coinsArray[i].symbol.toUpperCase();
+            coinsArray[i].price_change_percentage_24h =  coinsArray[i].price_change_percentage_24h.toLocaleString('en-US', {maximumFractionDigits:2});
+        }
         console.log(coinsArray)
         res.render('index', {coinsArray})
     })

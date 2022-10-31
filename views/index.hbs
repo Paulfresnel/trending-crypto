@@ -2,17 +2,23 @@
 <table>
     <thead>
         <tr>
-            <td>Name</td>
-            <td>Symbol</td>
-            <td>Price</td>
+            <td class="spacy"></td>
+            <td class="spacy">Name</td>
+            <td class="spacy">Symbol</td>
+            <td class="spacy">Price</td>
+            <td class="spacy">Market Cap</td>
+            <td class="spacy">Price Change 24h</td>
         </tr>
     </thead>
     <tbody>
         {{#each coinsArray}}
         <tr>
-            <td>{{this.id}}</td>
-            <td>{{this.symbol}}</td>
-            <td>{{this.price_btc}}</td>
+            <td class="margin-right spacy"><img class="small" src='{{this.image}}'></td>
+            <td class="spacy">{{this.name}}</td>
+            <td class="spacy">{{this.symbol}}</td>
+            <td class="spacy">$ {{this.current_price}}</td>
+            <td class="spacy">$ {{this.market_cap}}</td>
+            <td class="spacy">{{this.price_change_percentage_24h}} %</td>
         </tr>
         {{/each}}
     </tbody>

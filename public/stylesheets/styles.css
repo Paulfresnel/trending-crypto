@@ -21,6 +21,16 @@
     margin-bottom: 15px;
 }
 
+.spacy{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.small{
+    width:20px;
+    margin-right: 15px;
+}
+
 ul{
     display: flex;
     margin: 0 auto;
