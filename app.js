@@ -12,14 +12,18 @@ hbs.registerPartials(__dirname + "/views/partials");
 app.use(express.static('public'))
 
 
-app.get('/', (req, res) => { // Homepage route
+app.get('/trending', (req, res) => { // Trending route
     
     axios.get('https://api.coingecko.com/api/v3/search/trending')
     .then(apiData =>{
         let trendingCoins = apiData.data.coins
-        res.render('index', {trendingCoins: trendingCoins})
+        res.render('trending', {trendingCoins: trendingCoins})
     })
 })
+
+app.get('/', (req, res) => { // Homepage route
+        res.render('index')
+    })
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
