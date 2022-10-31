@@ -51,8 +51,9 @@ table{
 h2{
     text-decoration: underline;
     text-underline-offset: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     text-align: center;
+    font-size: 30px;
 }
 
 .gray{
@@ -61,6 +62,7 @@ h2{
 
 #mkcap-change{
     text-align: center;
+    font-size: 18px;
 }
 
 .flex-global{
