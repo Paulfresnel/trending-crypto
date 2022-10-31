@@ -1,3 +1,6 @@
+table{
+    margin:0 auto;
+}
 
 
 .flex-header{
@@ -7,6 +10,10 @@
 
 .image-logo{
     margin-right: 15px;
+}
+
+.bold {
+    font-weight: bold;
 }
 
 .coin-card{
@@ -21,14 +28,80 @@
     margin-bottom: 15px;
 }
 
+.table-head{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+.homelink{
+    margin-left: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border:1px black solid;
+    margin-right: 25px;
+    background-color: orange;
+    text-decoration: none;
+    color:black;
+    font-weight: bold;
+}
+
+h2{
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.gray{
+    background-color: lightgrey;
+}
+
+#mkcap-change{
+    text-align: center;
+}
+
+.flex-global{
+    margin:0 auto;
+    width:45%;
+    border:3px orange solid;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    outline: black 5px solid;
+    font-size: 20px;
+}
+
+
+nav{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    top:55px;
+    padding-bottom: 15px;
+    border-bottom: 1px gray solid;
+}
+
 .spacy{
     padding-left: 10px;
     padding-right: 10px;
+    text-align: center;
     
 }
 
+.spacy-extra{
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+
 .margin-bottom{
     height:40px;
+    outline: 0.5px lightgray solid;
 }
 
 .small{

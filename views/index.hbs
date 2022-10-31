@@ -1,12 +1,15 @@
-<h2>Home Page</h2>
+<div>
+    <h2>Top 25 Coins, by Market Cap</h2>
+    <p id="mkcap-change">Total market Cap Change 24h: <span class='bold'>{{globalStats.data.market_cap_change_percentage_24h_usd}} %</span></p>
+</div>
 <table>
     <thead>
-        <tr class="margin-bottom">
+        <tr class="margin-bottom table-head gray">
             <td class="spacy"></td>
             <td class="spacy">Name</td>
             <td class="spacy">Symbol</td>
             <td class="spacy">Price</td>
-            <td class="spacy">Market Cap</td>
+            <td class="spacy spacy-extra">Market Cap</td>
             <td class="spacy">Price Change 24h</td>
             <td class="spacy">ATH</td>
         </tr>
@@ -18,8 +21,8 @@
             <td class="spacy">{{this.name}}</td>
             <td class="spacy">{{this.symbol}}</td>
             <td class="spacy">$ {{this.current_price}}</td>
-            <td class="spacy">$ {{this.market_cap}}</td>
-            <td class="spacy">{{this.price_change_percentage_24h}} %</td>
+            <td class="spacy spacy-extra">$ {{this.market_cap}}</td>
+            <td class="spacy bold">{{this.price_change_percentage_24h}} %</td>
             <td class="spacy">$ {{this.ath}}</td>
         </tr>
         {{/each}}
